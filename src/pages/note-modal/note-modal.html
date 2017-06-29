@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar no-border-top color="blue-grey">
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="archive"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>New Note</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="noteForm" (ngSubmit)="onSubmit(noteForm.value)">
+    <ion-item>
+      <ion-input type="text" value="" formControlName="title" placeholder="Title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea value="" formControlName="content" placeholder="Content"></ion-textarea>
+    </ion-item>
+    
+    <button ion-button block>Save</button>
+  </form>
+
+</ion-content>

@@ -38,7 +38,13 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  light-grey:      #FAFAFA,
+  dark:       #222,
+  teal:     #009688,
+  indigo:   #3F51B5,
+  grey:     #9E9E9E,
+  blue-grey:  #607D8B,
+  pink:     #E91E63 
 );
 
 
@@ -52,7 +58,8 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+$toolbar-md-title-font-size:             1.7rem !default;
+$toolbar-md-height: 46px !default;
 
 
 

@@ -1,14 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
+
     <ion-title>
-      Ionic Blank
+      Secret Note
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngFor="let note of notes">
+
+    <ion-item>
+      <ion-buttons item-right>
+        <button clear ion-button icon-only (click)="presentPopover($event)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+      <b>{{ note?.title }}</b>
+      <br>
+      <small>{{ note?.date }}</small>
+    </ion-item>
+
+    <ion-card-content>
+      {{note?.content}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
