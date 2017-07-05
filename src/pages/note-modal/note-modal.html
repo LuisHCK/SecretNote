@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar no-border-top color="blue-grey">
     <ion-buttons start>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="saveNote()">
         <ion-icon name="archive"></ion-icon>
       </button>
     </ion-buttons>
@@ -19,14 +19,14 @@
 
   <form [formGroup]="noteForm" (ngSubmit)="onSubmit(noteForm.value)">
     <ion-item>
-      <ion-input type="text" value="" formControlName="title" placeholder="Title"></ion-input>
+      <ion-input type="text" value="" formControlName="title"
+      placeholder="Title" [(ngModel)]="title"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-textarea value="" formControlName="content" placeholder="Content"></ion-textarea>
+      <ion-textarea value="" formControlName="content" 
+      placeholder="Content" [(ngModel)]="content"></ion-textarea>
     </ion-item>
-    
-    <button ion-button block>Save</button>
   </form>
 
 </ion-content>

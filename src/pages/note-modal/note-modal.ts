@@ -15,6 +15,9 @@ export class NoteModalPage {
   private noteForm: any
   storedNotes = []
 
+  title:any
+  content:any
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
@@ -53,7 +56,9 @@ export class NoteModalPage {
     }
   }
 
-  getNotes() {
+  saveNote(formData) {
+    this.localStorage.addNote(this.title, this.content, this.pincode, this.storedNotes)
+    console.log("note saved")
   }
 
   dismiss() {
